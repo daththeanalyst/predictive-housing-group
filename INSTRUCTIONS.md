@@ -12,11 +12,25 @@ Each person runs **their assigned tool** on the same data with the same prompts.
 | [Name] | Codex (OpenAI) | `codex/` |
 | [Name] | GitHub Copilot Agent Mode | `copilot/` |
 
+## The Dataset
+
+One dataset about **London house prices**, split into 2 CSV files:
+
+| File | Rows | What it is |
+|------|------|-----------|
+| `london_house_prices.csv` | 417K | Individual properties — price, bedrooms, bathrooms, floor area, etc. |
+| `london_area_features.csv` | 168 | Area-level stats — crime, census demographics, points of interest |
+
+The AI agent merges them on the `outcode` column. The data is **deliberately messy**
+(missing values, outliers, skewed prices) to test how well each tool handles data quality.
+
 ## The Task
 
-We give each AI tool 2 CSV files about London house prices and ask it to:
+We give each AI tool these 2 CSV files and ask it to:
 - **Prompt A:** Build a full ML pipeline (load data → explore → model → improve)
 - **Prompt B:** Find and fix bugs in a broken pipeline we wrote
+
+The agent must save all work as a **Jupyter notebook (.ipynb)**.
 
 We do each prompt **twice** to check if the tool gives consistent results.
 That's **4 runs per person** (Prompt A ×2, Prompt B ×2).
@@ -105,7 +119,7 @@ These are critical. If anyone breaks these, the comparison is unfair.
 After each run, make sure you have:
 
 - [ ] Full conversation log (screenshot, export, or copy-paste)
-- [ ] All Python scripts the agent wrote
+- [ ] The Jupyter notebook (.ipynb) the agent created
 - [ ] All plots / charts (PNG files)
 - [ ] Final metrics (RMSE, MAE, R² — write these in AGENT_LOG.md)
 - [ ] Time taken (start → finish)

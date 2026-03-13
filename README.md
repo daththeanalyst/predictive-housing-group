@@ -20,14 +20,27 @@ git clone https://github.com/daththeanalyst/predictive-housing-group.git
 | | Codex (OpenAI) | `codex/` |
 | | GitHub Copilot Agent Mode | `copilot/` |
 
+## The Dataset (1 project, 2 linked files)
+
+This is **one dataset** about London house prices, split into 2 CSV files that the AI agent
+must merge together. The agent is told how to merge them in the prompt.
+
+| File | Rows | What it is |
+|------|------|-----------|
+| `london_house_prices.csv` | 417K | Individual properties — price, bedrooms, bathrooms, floor area, etc. |
+| `london_area_features.csv` | 168 | Area-level stats — crime counts, census demographics, points of interest |
+
+The agent merges them on the `outcode` column (London postcode district).
+The data is **deliberately messy** — missing values, outliers, skewed prices — to test how well each AI handles real-world data quality issues.
+
 ## What's in Each Folder
 
 Every folder has the **exact same data and prompts** — the only difference is which AI tool you use.
 
 | File | What it is |
 |------|-----------|
-| `london_house_prices.csv` | 417K London properties with prices, bedrooms, bathrooms, etc. |
-| `london_area_features.csv` | Crime, census, and POI data for 168 London outcode areas |
+| `london_house_prices.csv` | Property-level data (target: price) |
+| `london_area_features.csv` | Area-level features (merge on outcode) |
 | `prompt_a_main.txt` | **Copy-paste this into your AI tool** — asks it to build an ML model |
 | `prompt_b_debugging.txt` | **Copy-paste this into your AI tool** — asks it to find bugs in code |
 | `broken_pipeline.py` | The buggy code (also included in prompt B) |
@@ -51,10 +64,15 @@ Every folder has the **exact same data and prompts** — the only difference is 
 
 We run each prompt twice to test if the tool gives consistent results.
 
+## Expected Output
+
+The AI tool should produce a **Jupyter notebook (.ipynb)** for each run.
+The prompts tell the agent to save everything in a notebook.
+
 ## After You're Done
 
 1. Make sure your `AGENT_LOG.md` is filled in for all 4 runs
-2. Put your saved files (screenshots, code, plots) in subfolders: `run1/`, `run2/`, `run3/`, `run4/`
+2. Put your saved files (notebooks, screenshots, plots) in subfolders: `run1/`, `run2/`, `run3/`, `run4/`
 3. Push your changes or send your folder back to the group
 4. We meet to score everything together using `GROUP_SCORES.md`
 
