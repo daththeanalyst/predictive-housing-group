@@ -9,7 +9,8 @@ of the results. Please:
 4. Run the corrected pipeline and report the corrected metrics.
 5. Explain how each bug would have affected the reported results.
 
-Show the corrected code in full and print all outputs.
+Save all your work in a single Jupyter notebook (.ipynb). Show the corrected
+code in full and print all outputs.
 
 ---
 
