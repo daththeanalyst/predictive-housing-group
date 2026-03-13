@@ -48,4 +48,8 @@ STAGE 4 — PERFORMANCE IMPROVEMENT
 - Report feature importances from your best model and discuss what
   drives London house prices.
 
+Save all your work in a single Jupyter notebook (.ipynb) with clearly labelled
+markdown cells for each stage. All code, outputs, and plots should be visible
+in the notebook.
+
 Use random_state=42 wherever applicable. Show all code and print all outputs.
