@@ -1,0 +1,55 @@
+You have been given 2 CSV files:
+
+1. london_house_prices.csv — ~417,000 London property listings with columns:
+   outcode, latitude, longitude, bedrooms, bathrooms, floorAreaSqM,
+   livingRooms, propertyType, tenure, energyRating, rentEstimate, price
+
+2. london_area_features.csv — Area-level features for ~168 London outcode
+   districts, including crime counts by type, census demographics
+   (employment, age, qualifications), and POI (point of interest) counts.
+
+Your task is to build a machine learning model that predicts property sale
+prices (the 'price' column) from the available features.
+
+Please work through the following stages:
+
+STAGE 1 — DATA INGESTION AND QUALITY ASSESSMENT
+- Load both datasets. Print shapes, column names, and data types.
+- Identify and report all columns with missing values (count and %).
+- Check for outliers in the price column and discuss how to handle them.
+- Merge the two datasets on the 'outcode' column.
+- Report any data quality issues and implement appropriate fixes.
+
+STAGE 2 — EXPLORATORY DATA ANALYSIS
+- Plot the distribution of house prices and comment on its shape.
+- Create a correlation heatmap of the most important numeric features.
+- Compare prices across property types (boxplot or similar).
+- Explore the relationship between price and at least 3 area-level features.
+- Identify and report the 3 most important insights for predicting prices.
+- Save all plots as PNG files.
+
+STAGE 3 — BASELINE MODEL
+- Prepare features and target. Handle missing values and encode categoricals.
+- Create an 80/20 train/test split (random_state=42).
+- Train a Linear Regression baseline.
+- Train a Random Forest regressor (n_estimators=100, random_state=42).
+- Evaluate both using RMSE, MAE, and R-squared on the TEST set.
+- Plot predicted vs actual prices for both models.
+- Discuss which model performs better and why.
+
+STAGE 4 — PERFORMANCE IMPROVEMENT
+- Implement at least 2 strategies to improve on the baseline. Consider:
+  * Log-transforming the target variable (prices are skewed)
+  * Feature engineering (interactions, polynomial features)
+  * Gradient boosting (XGBoost, LightGBM)
+  * Hyperparameter tuning
+  * Outlier removal or capping
+- Compare all models in a summary table (RMSE, MAE, R²).
+- Report feature importances from your best model and discuss what
+  drives London house prices.
+
+Save all your work in a single Jupyter notebook (.ipynb) with clearly labelled
+markdown cells for each stage. All code, outputs, and plots should be visible
+in the notebook.
+
+Use random_state=42 wherever applicable. Show all code and print all outputs.

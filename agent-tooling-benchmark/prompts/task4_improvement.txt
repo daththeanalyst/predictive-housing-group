@@ -1,0 +1,21 @@
+You have london_h3_grid.parquet in the current directory. A baseline Random
+Forest achieves AUC ~0.88 for predicting cafe presence using only demographic,
+crime, transport, and graph centrality features (no POI counts).
+
+Your goal is to improve upon this baseline. You may use:
+- Feature engineering (interactions, transformations, spatial lag features)
+- Hyperparameter tuning
+- Alternative models (XGBoost, LightGBM, etc.)
+- Threshold tuning for F1 optimisation
+- Any features in the dataset EXCEPT n_cafe (the target source) — you MAY
+  use other POI counts (n_restaurant, n_pub, etc.) as co-occurrence features.
+
+Requirements:
+1. Implement at least 2 distinct improvement strategies.
+2. Use the same evaluation setup for fair comparison.
+3. Report AUC-ROC, F1, precision, recall for each approach.
+4. Print a summary table comparing baseline vs improved models.
+5. Identify the best approach and explain why it works.
+6. Discuss what the feature importances tell us about cafe site selection.
+
+Use random_state=42 wherever applicable. Show all code and print all outputs.
