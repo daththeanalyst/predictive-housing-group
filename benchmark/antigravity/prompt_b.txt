@@ -12,6 +12,17 @@ of the results. Please:
 Save all your work in a single Jupyter notebook (.ipynb). Show the corrected
 code in full and print all outputs.
 
+AFTER YOU FINISH — UPDATE THE AGENT LOG:
+Open AGENT_LOG.md in this folder and fill in the Run 2 section completely.
+Record the following:
+- Date, start time, end time, total duration
+- Total number of iterations (messages, tool calls, or code cells executed)
+- Every bug you found, what was wrong, and how you fixed it
+- The metrics before and after your corrections (RMSE, MAE, R²)
+- Any errors you encountered during execution and how you fixed them
+- Any warnings or concerns about the data or methodology
+Do not leave any field blank — write "N/A" if not applicable.
+
 ---
 
 ```python

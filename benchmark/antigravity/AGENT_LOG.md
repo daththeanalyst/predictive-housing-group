@@ -1,6 +1,4 @@
-# Agent Log — Antigravity
-
-> Fill in each section immediately after completing the corresponding run.
+# Agent Log
 
 ---
 
@@ -12,45 +10,39 @@
 - **Duration:**
 - **Iterations (messages / tool calls / code cells):**
 
-### Stage Completion
+### Stages Completed
 
 | Stage | Completed? | Notes |
 |-------|-----------|-------|
-| 1 — Data Ingestion & Quality | [ ] Yes [ ] No | |
-| 2 — EDA | [ ] Yes [ ] No | |
-| 3 — Baseline Model | [ ] Yes [ ] No | |
-| 4 — Performance Improvement | [ ] Yes [ ] No | |
+| | | |
 
-### Data Quality Handling
+### Data Quality Issues Found
 
-- Detected missing values? [ ] Yes [ ] No — Method:
-- Detected price outliers? [ ] Yes [ ] No — Method:
-- Detected skewed distribution? [ ] Yes [ ] No — Action:
-- Detected rentEstimate leakage? [ ] Yes [ ] No
-- Applied log-transform? [ ] Yes [ ] No
+| Issue | How Detected | Action Taken |
+|-------|-------------|-------------|
+| | | |
 
-### Final Metrics
+### Models Trained
 
 | Model | RMSE | MAE | R² |
 |-------|------|-----|-----|
-| Linear Regression | | | |
-| Random Forest | | | |
-| Best Model (name: ) | | | |
+| | | | |
 
-### Errors & Self-Corrections
+### Errors During Execution
 
-| # | Error | How Detected | How Fixed |
-|---|-------|-------------|-----------|
-| 1 | | | |
+| Error | How Detected | How Fixed |
+|-------|-------------|-----------|
+| | | |
 
 ### Plots Saved
 
-- [ ] Price distribution
-- [ ] Correlation heatmap
-- [ ] Price by property type
-- [ ] Predicted vs actual
-- [ ] Feature importances
-- [ ] Other:
+| Filename | Description |
+|----------|------------|
+| | |
+
+### Warnings or Concerns
+
+-
 
 ---
 
@@ -64,29 +56,27 @@
 
 ### Bugs Found
 
-| # | Bug Description | Found? | Explanation Given? | Fix Correct? |
-|---|----------------|--------|-------------------|-------------|
-| 1 | rentEstimate leakage (corr ~0.98 with price) | [ ] | | [ ] |
-| 2 | Evaluates on train data, labels as "Test" | [ ] | | [ ] |
-| 3 | fillna(0) instead of proper imputation | [ ] | | [ ] |
-| 4 | Too few features (misses categoricals + area features) | [ ] | | [ ] |
-| 5 | No log-transform on skewed prices | [ ] | | [ ] |
-| 6 | No outlier handling | [ ] | | [ ] |
-| 7 | Other: | [ ] | | [ ] |
+| Bug | What Was Wrong | How Fixed |
+|-----|---------------|-----------|
+| | | |
 
-### Corrected Metrics
+### Metrics
 
-| Metric | Buggy Value | Corrected Value |
-|--------|------------|----------------|
+| Metric | Before Fix | After Fix |
+|--------|-----------|-----------|
 | RMSE | | |
 | MAE | | |
 | R² | | |
 
-### Errors & Self-Corrections
+### Errors During Execution
 
-| # | Error | How Detected | How Fixed |
-|---|-------|-------------|-----------|
-| 1 | | | |
+| Error | How Detected | How Fixed |
+|-------|-------------|-----------|
+| | | |
+
+### Warnings or Concerns
+
+-
 
 ---
 

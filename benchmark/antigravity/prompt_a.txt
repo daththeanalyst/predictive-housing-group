@@ -53,3 +53,16 @@ markdown cells for each stage. All code, outputs, and plots should be visible
 in the notebook.
 
 Use random_state=42 wherever applicable. Show all code and print all outputs.
+
+AFTER YOU FINISH — UPDATE THE AGENT LOG:
+Open AGENT_LOG.md in this folder and fill in the Run 1 section completely.
+Record the following:
+- Date, start time, end time, total duration
+- Total number of iterations (messages, tool calls, or code cells executed)
+- Which stages you completed and any you skipped
+- What data quality issues you found and how you handled them
+- Final metrics for every model you trained (RMSE, MAE, R²)
+- Any errors you encountered during execution and how you fixed them
+- What plots you saved and their filenames
+- Any warnings or concerns about the data or methodology
+Do not leave any field blank — write "N/A" if not applicable.
