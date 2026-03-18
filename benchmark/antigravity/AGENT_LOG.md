@@ -113,9 +113,9 @@
 
 | Dimension | Prompt A (0-3) | Prompt B (0-3) | Notes |
 |-----------|---------------|---------------|-------|
-| Correctness | | | |
-| Statistical Validity | | | |
-| Reproducibility | | | |
-| Code Quality | | | |
-| Efficiency | | | |
-| Safety | | | |
+| Correctness | 3 | 2 | A: All 4 stages, verification gates, no errors. B: Found 2/2 main bugs, missed merge guard and rentEstimate removal. |
+| Statistical Validity | 3 | 2 | A: Proper split, test eval, leakage flagged, imputation timing acknowledged. B: Correct train→test fix, but kept rentEstimate. |
+| Reproducibility | 3 | 2 | A: RANDOM_STATE constant, decision blocks, verification gates, self-contained. B: Clean and runnable, simpler structure. |
+| Code Quality | 3 | 2 | A: Decision blocks, verification gates, helper functions, property type consolidation. B: Clean but simpler, no modular design. |
+| Efficiency | 3 | 3 | A: 14 min, no errors, first attempt. B: 8 min, 15 tool calls, fastest Prompt B across all tools. |
+| Safety | 3 | 2 | A: 4 proactive warnings (leakage, RF>XGB, imputation, log-transform). B: Good explanations but didn't act on leakage. |
