@@ -113,3 +113,13 @@
 | Efficiency | 2 | 2 | A: 14 min, 46 iterations, no errors but lower quality output. B: 17 min, 66 iterations — slowest but most comprehensive. |
 | Safety | 2 | 3 | A: 3 warnings but didn't catch R²=-275 as red flag. B: Actually removed leakage feature, wrote tests, flagged residual issues. |
 
+Prompt A (12/18)
+
+Copilot completed all four stages and was the only tool to use a proper sklearn Pipeline with ColumnTransformer, meaning imputation was correctly fitted on training data only, a best practice approach the other tools missed. However, the Linear Regression baseline produced a catastrophic R²=-275.27 which the agent noted as "unstable" but did not investigate or fix, undermining confidence in the output. The Random Forest (R²=0.822, RMSE=£390K) performed significantly below Antigravity's equivalent, likely due to the log1p target strategy interacting poorly with the preprocessing pipeline. Leakage and geographic dependence were flagged but not acted upon.
+
+Prompt B (16/18)
+
+Copilot delivered the most thorough debugging output of any tool. It found five bugs which are more than any other tool, including the merge cardinality guard and rentEstimate leakage, which it actually removed from the corrected feature list rather than merely flagging. It was the only tool to write regression tests (test_debug_pipeline.py) and produce residual diagnostics (histogram, before/after comparison, top-15 residuals CSV). The corrected metrics (RMSE=£308,322, R²=0.889) are less flattering than Antigravity's because rentEstimate was removed, but this is arguably the more statistically honest result. The trade-off was efficiency, at 17 minutes and 66 iterations, it was the slowest Prompt B run.
+
+
+
