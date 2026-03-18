@@ -119,3 +119,11 @@
 | Code Quality | 3 | 2 | A: Decision blocks, verification gates, helper functions, property type consolidation. B: Clean but simpler, no modular design. |
 | Efficiency | 3 | 3 | A: 14 min, no errors, first attempt. B: 8 min, 15 tool calls, fastest Prompt B across all tools. |
 | Safety | 3 | 2 | A: 4 proactive warnings (leakage, RF>XGB, imputation, log-transform). B: Good explanations but didn't act on leakage. |
+
+Prompt A (18/18)
+
+Antigravity produced the strongest Prompt A output across all tools. The notebook followed a rigorous structure with explicit decision blocks justifying every methodological choice (outlier capping strategy, imputation method, encoding scheme) and verification gates confirming each stage met the spec. It proactively flagged four concerns, most notably that rentEstimate accounted for 96% of feature importance and likely constitutes target leakage. The best model (Random Forest, R²=0.9985) was the highest-performing across all tools, and the agent transparently discussed why improvement strategies (log-transform, XGBoost) did not outperform the baseline RF.
+
+Prompt B (13/18)
+
+Antigravity correctly identified and fixed both primary bugs (training-set evaluation labelled as test metrics, and fillna(0) replacing missing values with nonsensical zeros), producing corrected test-set metrics of RMSE=£66,194, R²=0.9949. The fix was clean and the explanations were sound. However, it missed the merge cardinality guard (no validate='m:1') and did not remove rentEstimate from the corrected pipeline despite flagging it as a leakage concern, a gap in acting on its own warnings. The run was the most efficient Prompt B across all tools at ~8 minutes with no errors.
