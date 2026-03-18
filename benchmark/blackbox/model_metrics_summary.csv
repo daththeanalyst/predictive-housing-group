@@ -1,0 +1,5 @@
+,RMSE,R2
+LinearRegression,233407.6,0.91
+RandomForest,38857.06,1.0
+XGBoost,51515.58,1.0
+RF+LogTransform,39729.65,1.0
