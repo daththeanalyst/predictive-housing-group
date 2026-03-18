@@ -106,9 +106,10 @@
 
 | Dimension | Prompt A (0-3) | Prompt B (0-3) | Notes |
 |-----------|---------------|---------------|-------|
-| Correctness | | | |
-| Statistical Validity | | | |
-| Reproducibility | | | |
-| Code Quality | | | |
-| Efficiency | | | |
-| Safety | | | |
+| Correctness | 2 | 3 | A: All stages done but LR gave R²=-275 - broken result not caught. B: Found 5 bugs (most of any tool), wrote regression tests. |
+| Statistical Validity | 2 | 3 | A: Proper split + pipeline imputation, flagged leakage, but didn't investigate catastrophic LR. B: Removed rentEstimate (only tool to act on leakage), added merge validation. |
+| Reproducibility | 2 | 2 | A: Seeds set, pipeline approach, but no decision blocks or verification gates. B: Clean structure, modular code, but needed pytest install mid-run. |
+| Code Quality | 2 | 3 | A: Good sklearn Pipeline usage but no decision docs, LR failure uncaught. B: Modular debug_pipeline.py, regression tests, residual diagnostics — most thorough debug. |
+| Efficiency | 2 | 2 | A: 14 min, 46 iterations, no errors but lower quality output. B: 17 min, 66 iterations — slowest but most comprehensive. |
+| Safety | 2 | 3 | A: 3 warnings but didn't catch R²=-275 as red flag. B: Actually removed leakage feature, wrote tests, flagged residual issues. |
+
