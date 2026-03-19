@@ -64,14 +64,7 @@ Priority: **Critical** fixes first, then improvements by section.
 Nowhere in the report do you explain why Codex was replaced by Blackbox. Add one sentence to experimental design:
 > "We initially planned to include OpenAI Codex as a standalone tool but replaced it with Blackbox AI after Codex failed to execute due to missing dataset files in its sandboxed environment."
 
-### 10. Blackbox agent log is a template — metrics are unsourced
-The Blackbox `AGENT_LOG.md` contains placeholder values (`$(date)`, `N/A (run notebook)`) instead of actual results. The report cites R²=1.0 and RMSE=£38,857 but these don't appear in a structured log — they were presumably read from notebook output cells.
-
-**Current (Blackbox paragraph in Section 2.2):**
-> "Blackbox AI completed all stages with ~15 tool calls."
-
-**Replace with:**
-> "Blackbox AI completed all stages with ~15 tool calls. Unlike the other tools, Blackbox did not produce a structured agent log; metrics below were extracted from notebook output cells rather than logged automatically, which limits auditability."
+### 10. *(Resolved — Blackbox agent log has been filled in by teammate)*
 
 ### 11. Qualify "strongest" claim for Antigravity
 **Current (first sentence of Section 2.2):**
@@ -100,10 +93,7 @@ The notebook actually outputs R²=0.9976; the agent's summary table used `.round
 
 **Also fix Table 1:** Change Blackbox R² from `1.0` to `0.998*` with footnote: *"Actual value 0.9976; displayed as 1.00 due to rounding in agent output."*
 
-**Current (end of Blackbox paragraph):**
-> "Five warnings were listed (including leakage and imputation timing) but none were acted upon."
-
-**Replace "Five" with "Four"** — the agent log lists exactly four warnings (rentEstimate leakage, LabelEncoder, imputation timing, no cross-validation).
+**Note:** The report says "Five warnings" — the updated agent log now lists five (including "R²=1.0 not questioned"), so "Five" is correct. No change needed on the warning count.
 
 ### 14. Add reproducibility statement to Section 2.1
 The assignment requires "Ensure work is reproducible (or explain why not)." Section 2.1 doesn't address this.
@@ -254,12 +244,7 @@ The assignment requires assessing specific things per dimension. The report prov
 **Replace with:**
 > "Blackbox's failure to debug the provided pipeline — instead producing a notebook titled 'Stage 4 Performance Improvement' that was never executed and contained syntax errors — demonstrates that some tools may not reliably follow complex instructions. This prompt non-adherence is a critical failure mode not captured by standard performance metrics."
 
-### 34. Add Blackbox evidence quality to limitations
-**Current:**
-> "These findings are bounded by several limitations: a single dataset (London house prices), single runs per tool with no variance estimates, three tools evaluated, and subjective 0–3 scoring calibrated across team members but without formal inter-rater reliability measures."
-
-**Replace with:**
-> "These findings are bounded by several limitations: a single dataset (London house prices), single runs per tool with no variance estimates, three tools evaluated, subjective 0–3 scoring without formal inter-rater reliability, and uneven evidence quality — Blackbox's agent log was a template with placeholder values rather than a structured execution record, limiting the auditability of its results."
+### 34. *(Resolved — Blackbox agent log has been filled in, template issue no longer applies)*
 
 ### 35. Add one sentence on scoring methodology
 **After the scoring description on page 7:**
@@ -326,7 +311,7 @@ Confirm the actual word count of pages 3-9 (main body only). The cover says 2,00
 | 4-7. Lit review improvements | Section 1 | 15 min | +3 marks (~25→28/30) |
 | **SECTION 2.1 — Experimental Design** | | | |
 | 8-9. Specify LLMs + Codex→Blackbox | Section 2.1 | 5 min | Adds rigour |
-| 10. Blackbox log is a template | Section 2.1 | 2 min | Auditability |
+| ~~10. Blackbox log is a template~~ | ~~Section 2.1~~ | ~~0 min~~ | ~~Resolved by teammate~~ |
 | 11. Qualify "strongest" claim | Section 2.1 | 1 min | Accuracy |
 | 12. Add task specs/success criteria ref | Section 2.1 | 1 min | Meets assignment requirement |
 | 13. R²=0.9976 not 1.0 + "Five"→"Four" | Section 2.2 | 3 min | Prevents misrepresentation |
@@ -351,7 +336,7 @@ Confirm the actual word count of pages 3-9 (main body only). The cover says 2,00
 | 31. Fix "5 bugs" in Finding #1 | Section 3 | 1 min | Accuracy |
 | 32. Fix imputation/rentEstimate conflation | Section 3 | 1 min | Precision |
 | 33. Strengthen Finding #4 | Section 3 | 1 min | Evidence quality |
-| 34. Add Blackbox evidence gap to limitations | Section 3 | 1 min | Transparency |
+| ~~34. Blackbox evidence gap~~ | ~~Section 3~~ | ~~0 min~~ | ~~Resolved by teammate~~ |
 | 35. Scoring methodology sentence | Section 3 | 2 min | +2 marks (~16→18/20) |
 | **SECTION 4 — Reflection** | | | |
 | 36. "best pipeline" → "most comprehensive" | Section 4 | 1 min | Internal consistency |
